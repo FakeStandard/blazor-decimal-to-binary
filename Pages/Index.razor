@@ -1,0 +1,47 @@
+﻿@page "/"
+
+<PageTitle>Decimal To Binary</PageTitle>
+
+<form>
+    <div class="form-group row pt-1 pb-2">
+        <div class="col-12 col-sm-4">
+            <label class="col-form-label">請輸入十進位數字</label>
+        </div>
+        <div class="col-9 col-sm-5">
+            <input type="text" class="form-control" @bind-value=@DecimalStr placeholder="請輸入數字" />
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-outline-dark" @onclick="ConvertClick">轉換</button>
+        </div>
+    </div>
+    <div class="form-group row pt-1 pb-2">
+        <div class="col-12 col-sm-4">
+            <label class="col-form-label">轉換後二進位</label>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" @bind=@BinaryStr />
+        </div>
+    </div>
+</form>
+
+@code {
+    private string decimalStr = "";
+    public string DecimalStr
+    {
+        get => decimalStr;
+        set
+        {
+            if (long.TryParse(value, out var number))
+                decimalStr = value;
+        }
+    }
+
+    public string BinaryStr = "";
+
+    private void ConvertClick()
+    {
+        var res = Convert.ToInt64(DecimalStr);
+
+        BinaryStr = Convert.ToString(res, 2);
+    }
+}
