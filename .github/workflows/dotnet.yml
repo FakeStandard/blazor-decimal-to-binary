@@ -16,7 +16,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Blazor Project - Decimal to Binary
-        run: dotnet publish BlazorGitHubPages.csproj -c Release -o release --nologo
+        run: dotnet publish DecimalToBinary.csproj -c Release -o release --nologo
 
       # 修改 index.html 的 base href 設定
       - name: 修改 index.html 的 base href 設定
