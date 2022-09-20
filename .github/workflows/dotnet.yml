@@ -20,7 +20,7 @@ jobs:
 
       # 修改 index.html 的 base href 設定
       - name: 修改 index.html 的 base href 設定
-        run: sed -i 's/<base href="\/" \/>/<base href="\/DecimalToBinary\/" \/>/g' release/wwwroot/index.html
+        run: sed -i 's/<base href="\/" \/>/<base href="\/blazor-decimal-to-binary\/" \/>/g' release/wwwroot/index.html
 
       # 新增 .nojekyll 檔
       - name: 新增 .nojekyll 檔
